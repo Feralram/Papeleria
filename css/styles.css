@@ -1299,7 +1299,7 @@ Registro
     max-width: 100px;
     width:90%;
     
-    background-color: rgba(255, 255, 255, .75);
+    background-color:#ff2e628c;
     
     /*opacity: 0.50;
     filter: alpha(opacity=50);*/
@@ -1393,13 +1393,5 @@ Registro
     background-color: #3c4245;
     color:#dfcdc3;
 }
-#login a{
-    box-sizing: border-box;
-    text-align: center;
-    display:contents;
-    width: 100%;
-    color:#ffffff;
-    padding: 20px 20px;
 
-}
 
