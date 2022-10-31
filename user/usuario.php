@@ -1,3 +1,15 @@
+<?php
+session_start();
+if(isset($_POST['cerrarSesion'])){
+  unset($_SESSION['usuario']);
+  
+  header('Location: ../login.php');
+  exit();
+}
+?>
+
+<?php if(isset($_SESSION['usuario'])){ ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -26,20 +38,21 @@
   <header id="header">
     <nav class="menu">
       <div class="logo-box">
-        <h1><a href="usuario.html">La Esquinita Creativa</a></h1>
+        <h1><a href="index.html">La Esquinita Creativa</a></h1>
         <span class="btn-menu"><i class="fas fa-bars"></i></span>
       </div>
 
       <div class="list-container">
         <ul class="lists">
-          <li><a href="usuario.html" class="active">Inicio</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="servicio.html">Servicios</a></li>
-          <li><a href="mision.html">Mision</a></li>
-          <li><a href="vision.html">Vision</a></li>
-          <li><a href="fotos.html">Fotos</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-          <li><a href="../index.html">Cerrar Sesion</a></li>
+          <li><a href="usuario.php" class="active">Inicio</a></li>
+          <!-- <li><a href="nosotros.php">Nosotros</a></li>
+          <li><a href="servicio.php">Servicios</a></li>
+          <li><a href="mision.php">Mision</a></li>
+          <li><a href="vision.php">Vision</a></li> -->
+          <li><a href="pedido.php">Pedido</a></li>
+          <li><a href="fotos.php">Fotos</a></li>
+          <li><a href="contacto.php">Contacto</a></li>
+          <li><form action="" method="POST"><button type="submit" name="cerrarSesion">Cerrar Sesion</button></form></li>
           <li>
             <div class="buscar">
               <input type="text" placeholder="Buscar" required />
@@ -59,7 +72,7 @@
       <div class="welcome">
         <h1>Bienvenidos a La Esquinita Creativa</h1>
         <hr>
-        <p>Personaliza tus útiles con una gran presentación</p>
+        <p>Personaliza tus utlies con una gran presentacion</p>
         <button id="abajo">Ver abajo</button>
       </div>
     </div>
@@ -143,8 +156,15 @@
 
   <!-- Scripts -->
   <script src="https://kit.fontawesome.com/35db202371.js"></script>
-  <script src="js/app.js"></script>
+  <script src="../js/app.js"></script>
 
 </body>
 
 </html>
+<?php 
+}else{
+  
+  header('Location: ../login.php');
+  exit();
+}
+?>

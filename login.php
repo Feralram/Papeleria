@@ -1,3 +1,15 @@
+<?php
+session_start();
+  if($_SESSION['usuario']){
+
+    header('Location: user/usuario.php');
+    exit();
+  }
+  
+  include 'config/bd.php';
+  include 'user.php';
+  include 'userController.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,6 +24,8 @@
   <link rel="stylesheet" href="css/styles.css">
 
   <link href="https://fonts.googleapis.com/css?family=Red+Hat+Text:400,500,700&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </head>
 
@@ -27,12 +41,6 @@
     <nav class="menu">
       <div class="logo-box">
         <h1><a href="index.html">La Esquinita Creativa</a></h1>
-        <!--Ingresar modo Administrador-->
-        <div class="desing_Admin">
-          <ul class="lists">
-            <li><a href="/admin/admin.html" class="active">💻</a></li>
-          </ul>
-        </div>
         <span class="btn-menu"><i class="fas fa-bars"></i></span>
       </div>
 
@@ -45,7 +53,7 @@
           <li><a href="vision.html">Vision</a></li>
           <li><a href="fotos.html">Fotos</a></li>
           <li><a href="contacto.html">Contacto</a></li>
-          <li><a href="login.html" class="active">Login</a></li>
+          <li><a href="login.php" class="active">Login</a></li>
           <li>
             <div class="buscar">
               <input type="text" placeholder="Buscar" required />
@@ -68,26 +76,43 @@
           <div class="welcome">
             <div id="contenedor">
 
-              <div id="contenedorcentradoH">
+              <div id="contenedorcentrado">
                 <div id="login">
-                  <form action="" id="loginform">
-                    <label for="usuario">Nombre usuario</label>
+                  <form id="loginform" action="" method="post">
+                  <?php
+                                        if (isset($errorLogin)) {
+                                            echo $errorLogin;
+                                        }
+                                        ?> 
+                    <label for="usuario">Usuario</label>
                     <input id="usuario" type="text" name="usuario" placeholder="Usuario" required>
-                    <label for="usuario">Correo Electronico</label>
-                    <input id="usuario" type="email" name="usuario" placeholder="Correo" required>
-                    <label for="usuario">Edad</label>
-                    <input id="usuario" type="number" name="usuario" placeholder="Edad" required>
+
                     <label for="password">Contraseña</label>
                     <input id="password" type="password" placeholder="Contraseña" name="password" required>
-                    <label for="password">Confirma Contraseña</label>
-                    <input id="re_password" type="password" placeholder="Contraseña" name="re_password" required>
 
-                    <button type="submit" title="Ingresar" name="Ingresar">Registro</button>
-
+                    <button type="submit" name="submit" title="Ingresar" name="Ingresar">Iniciar sesion</button>
                   </form>
+                  <div class="pie-form">
+                            <a href="Registro.php">Registro</a>
+                            <!-- <a href="#">¿No tienes Cuenta? Registrate</a>
+                            <hr>
+                            <a href="#">« Volver</a> -->
+                        </div>
 
                 </div>
 
+                <div id="derecho">
+                  <div class="titulo">
+                    Bienvenido
+                  </div>
+                  <hr>
+                  <!-- <div class="pie-form">
+                            <a href="#">¿Perdiste tu contraseña?</a>
+                            <a href="#">¿No tienes Cuenta? Registrate</a>
+                            <hr>
+                            <a href="#">« Volver</a>
+                        </div> -->
+                </div>
               </div>
             </div>
           </div>

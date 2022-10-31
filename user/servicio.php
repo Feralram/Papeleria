@@ -1,3 +1,15 @@
+<?php
+session_start();
+if(isset($_POST['cerrarSesion'])){
+  unset($_SESSION['usuario']);
+  
+  header('Location: ../login.php');
+  exit();
+}
+?>
+
+<?php if(isset($_SESSION['usuario'])){ ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -33,25 +45,25 @@
 
 
       <div class="list-container">
-        <ul class="lists">
-          <li><a href="usuario.html">Inicio</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="servicio.html" class="active">Servicios</a></li>
-          <li><a href="mision.html">Mision</a></li>
-          <li><a href="vision.html">Vision</a></li>
-          <li><a href="fotos.html">Fotos</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-          <li><a href="../index.html">Cerrar Sesion</a></li>
+      <ul class="lists">
+          <li><a href="usuario.php" >Inicio</a></li>
+          <li><a href="nosotros.php">Nosotros</a></li>
+          <li><a href="servicio.php" class="active">Servicios</a></li>
+          <li><a href="mision.php">Mision</a></li>
+          <li><a href="vision.php">Vision</a></li>
+          <li><a href="fotos.php">Fotos</a></li>
+          <li><a href="contacto.php">Contacto</a></li>
+          <li><form action="" method="POST"><button type="submit" name="cerrarSesion">Cerrar Sesion</button></form></li>
           <li>
             <div class="buscar">
               <input type="text" placeholder="Buscar" required />
-
+        
               <div class="btn">
                 <i class="fas fa-search icon"></i>
               </div>
             </div>
           </li>
-        </ul>
+      </ul>
       </div>
     </nav>
 
@@ -119,3 +131,10 @@
 </body>
 
 </html>
+<?php 
+}else{
+  
+  header('Location: ../login.php');
+  exit();
+}
+?>

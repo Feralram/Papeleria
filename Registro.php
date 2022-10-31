@@ -1,3 +1,40 @@
+<?php
+require_once "user.php";
+if(isset($_POST)){
+    //valido que lleguen todos los datos
+    $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : false;
+    $apellido = isset($_POST['apellido']) ? $_POST['apellido'] : false;
+    $correo =isset($_POST['correo']) ? $_POST['correo'] : false; 
+    $contrasenia = isset($_POST['password']) ? $_POST['password'] : false;
+    // solo se pude guardar el ausuario si llegan todos los datos
+    if($nombre&&$apellido&&$correo&&$contrasenia){
+         //echo 'entroo';
+        //llamo al modelo
+        $usuario = new User();
+        //seteo los valores
+
+        
+        $usuario->setNombre($nombre);
+        $usuario->setApellido($apellido);
+        $usuario->setCorreo($correo);
+        $usuario->setPassword($contrasenia);
+
+
+        $save = $usuario->save();
+
+
+
+        if($save==1){
+            $message = "REGISTRO EXITOSO!";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+        }else{
+            $message = "REGISTRO FALLIDO! Correo registrado";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -10,6 +47,8 @@
 
   <!-- Estilos Css -->
   <link rel="stylesheet" href="css/styles.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <link href="https://fonts.googleapis.com/css?family=Red+Hat+Text:400,500,700&display=swap" rel="stylesheet">
 
@@ -31,7 +70,7 @@
       </div>
 
       <div class="list-container">
-        <ul class="lists">
+      <ul class="lists">
           <li><a href="index.html">Inicio</a></li>
           <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="servicio.html">Servicios</a></li>
@@ -39,7 +78,7 @@
           <li><a href="vision.html">Vision</a></li>
           <li><a href="fotos.html">Fotos</a></li>
           <li><a href="contacto.html">Contacto</a></li>
-          <li><a href="login.html" class="active">Login</a></li>
+          <li><a href="login.php" class="active">Login</a></li>
           <li>
             <div class="buscar">
               <input type="text" placeholder="Buscar" required />
@@ -64,29 +103,30 @@
 
               <div id="contenedorcentrado">
                 <div id="login">
-                  <form id="loginform">
-                    <label for="usuario">Usuario</label>
-                    <input id="usuario" type="text" name="usuario" placeholder="Usuario" required>
-
+                <div class="titulo">
+                    Registro
+                  </div>
+                  <form id="loginform" action="" method="post">
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" type="text" name="nombre" placeholder="Nombre" required>
+                    <label for="apellido">Apellido</label>
+                    <input id="apellido" type="text" name="apellido" placeholder="Apellidos" required>
+                    <label for="correo">Correo electronico</label>
+                    <input id="correo" type="text" name="correo" placeholder="Correo electronico " required>                
                     <label for="password">Contraseña</label>
                     <input id="password" type="password" placeholder="Contraseña" name="password" required>
-
-                    <button type="submit" title="Ingresar" name="Ingresar">Iniciar sesion</button>
+                    <button type="submit" name="submit" title="Ingresar" name="Ingresar">Registrarse</button>
                   </form>
+                  <div class="pie-form">
+                            <a href="login.php">Regresar</a>
+                            <!-- <a href="#">¿No tienes Cuenta? Registrate</a>
+                            <hr>
+                            <a href="#">« Volver</a> -->
+                        </div>
 
                 </div>
-                <div id="derecho">
-                  <div class="titulo">
-                    Bienvenido
-                  </div>
-                  <hr>
-                  <!-- <div class="pie-form">
-                            <a href="#">¿Perdiste tu contraseña?</a>
-                            <a href="#">¿No tienes Cuenta? Registrate</a>
-                            <hr>
-                            <a href="#">« Volver</a>
-                        </div> -->
-                </div>
+
+               
               </div>
             </div>
           </div>

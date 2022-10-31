@@ -1,3 +1,14 @@
+<?php
+session_start();
+if(isset($_POST['cerrarSesion'])){
+  unset($_SESSION['usuario']);
+  header('Location: ../login.php');
+  exit();
+}
+?>
+
+<?php if(isset($_SESSION['usuario'])){ ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -35,6 +46,9 @@
       
       <div class="list-container">
         <ul class="lists"> 
+        <li><a href="inicioAdmin.php" class="active">Inicio</a></li>
+          <li><a href="viewUsuarios.php">Usuarios</a></li>
+          <li><form action="" method="POST"><button type="submit" name="cerrarSesion">Cerrar Sesion</button></form></li>
           <li>
             <div class="buscar">
               <input type="text" placeholder="Buscar" required />
@@ -61,16 +75,16 @@
                 
                 <div id="derecho">
                   <div class="titulo">
-                    Bienvenido Administrador Hugo
+                    Bienvenido Administrador <?=$_SESSION['usuario'] ?>
                   </div>
                   <hr>
                   <div class="interior">
                     
                     <nav class="navegacion">
                       <ul>
-                        <li><a href="" target="blank">Usuarios</a></li>
+                        <li><a href="viewUsuarios.php" >Usuarios</a></li>
                         <li><a href="" target="blank">Administradores</a></li>
-                        <li><a href="" target="blank">Contacto</a></li>
+                        
                         <li class="submenu">
                           <a href="" target="blank">Productos</a>
                           <ul class="hijos">
@@ -79,7 +93,7 @@
                             <li><a href="">Actualizar</a></li>
                           </ul>
                         </li>
-                        <li><a href="../admin/admin.html" target="blank">Cerrar Sesion</a></li>
+                        
                       </ul>
                     </nav>
                   </div>
@@ -111,3 +125,9 @@
 </body>
 
 </html>
+<?php 
+}else{
+  header('Location: ../login.php');
+  exit();
+}
+?>
