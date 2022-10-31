@@ -24,9 +24,11 @@
           <li><a href="servicio.php">Servicios</a></li>
           <li><a href="mision.php">Mision</a></li>
           <li><a href="vision.php">Vision</a></li> -->
+		  <li><a href="admins.html">Admins</a></li>
           <li><a href="pedido.php" class="active">Pedido</a></li>
           <li><a href="fotos.php">Fotos</a></li>
           <li><a href="contacto.php">Contacto</a></li>
+		  <li><a href="controlAdmins.html">Tabla Admins</a></li>
 		  
           <li>
             <div class="buscar">

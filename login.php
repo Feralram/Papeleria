@@ -93,7 +93,7 @@ session_start();
                     <button type="submit" name="submit" title="Ingresar" name="Ingresar">Iniciar sesion</button>
                   </form>
                   <div class="pie-form">
-                            <a href="Registro.php">Registro</a>
+                            <a href="registro.html">Registro</a>
                             <!-- <a href="#">¿No tienes Cuenta? Registrate</a>
                             <hr>
                             <a href="#">« Volver</a> -->

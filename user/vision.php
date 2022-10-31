@@ -49,6 +49,7 @@ if(isset($_POST['cerrarSesion'])){
           <li><a href="vision.php" class="active">Vision</a></li>
           <li><a href="fotos.php">Fotos</a></li>
           <li><a href="contacto.php">Contacto</a></li>
+          <li><a href="controlAdmins.html">Tabla Admins</a></li>
           <li><form action="" method="POST"><button type="submit" name="cerrarSesion">Cerrar Sesion</button></form></li>
           <li>
             <div class="buscar">
