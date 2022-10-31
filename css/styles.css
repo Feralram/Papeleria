@@ -1091,15 +1091,16 @@ hr {
     margin:auto;
 }
 .principal .formulario-content{
-    width: 60%;
+    width: 50%;
     margin: 50px auto;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.466);
     padding:30px;
     border-radius: 50px;
     border: 1.5px solid var(--red);
 }
 .principal .formulario-content #formulario{
     display: flex;
+    
     justify-content: center;
     flex-direction: column;
 }
@@ -1108,6 +1109,7 @@ hr {
     text-align: center;
     color: var(--black);
     margin: 30px 0px 10px 0px;
+    
 }
 .principal .formulario-content #formulario input{
     width: 90%;
@@ -1119,6 +1121,7 @@ hr {
     text-align: center;
     font-size: 18px;
     color: var(--black);
+    background: rgba(255, 255, 255, 0.466);
 }
 .principal .formulario-content #formulario textarea{
     width: 90%;
@@ -1127,9 +1130,10 @@ hr {
     padding: 20px;
     border-radius: 24px;
     outline: none;
-    border:1.5px solid var(--red);
+    border:2px solid var(--red);
     font-size: 15px;
     color: var(--black);
+    background: rgba(255, 255, 255, 0.466);
 }
 .principal .formulario-content #formulario .send{
     margin: 30px;
@@ -1151,7 +1155,7 @@ hr {
     transition: 0.5s;
 }
 .principal .formulario-content #formulario button:hover{
-    background: var(--blue);
+    background: var(--black);
 }
 .principal .formulario-content #formulario .mensaje-form{
     width: 100%;
