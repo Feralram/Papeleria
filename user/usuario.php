@@ -49,7 +49,7 @@ if(isset($_POST['cerrarSesion'])){
           <li><a href="servicio.php">Servicios</a></li>
           <li><a href="mision.php">Mision</a></li>
           <li><a href="vision.php">Vision</a></li> -->
-          <li><a href="pedido.php">Pedido</a></li>
+          <li><a href="pedido.html">Pedido</a></li>
           <li><a href="fotos.php">Fotos</a></li>
           <li><a href="contacto.php">Contacto</a></li>
           <li><a href="admins.html">Admins</a></li>

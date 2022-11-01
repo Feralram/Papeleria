@@ -44,11 +44,12 @@ if(isset($_POST['cerrarSesion'])){
 
       <div class="list-container">
       <ul class="lists">
-          <li><a href="usuario.php" >Inicio</a></li>
-          <li><a href="nosotros.php">Nosotros</a></li>
+      <li><a href="usuario.php" class="active">Inicio</a></li>
+          <!-- <li><a href="nosotros.php">Nosotros</a></li>
           <li><a href="servicio.php">Servicios</a></li>
-          <li><a href="mision.php" class="active">Mision</a></li>
-          <li><a href="vision.php">Vision</a></li>
+          <li><a href="mision.php">Mision</a></li>
+          <li><a href="vision.php">Vision</a></li> -->
+          <li><a href="pedido.html">Pedido</a></li>
           <li><a href="fotos.php">Fotos</a></li>
           <li><a href="contacto.php">Contacto</a></li>
           <li><a href="admins.html">Admins</a></li>

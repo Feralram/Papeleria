@@ -43,15 +43,13 @@
           <li><a href="mision.php">Mision</a></li>
           <li><a href="vision.php">Vision</a></li> -->
           <li><a href="pedido.html">Pedido</a></li>
+          <li><a href="controlPedido.html">Control Pedido</a></li>
           <li><a href="fotos.php">Fotos</a></li>
           <li><a href="contacto.php">Contacto</a></li>
           <li><a href="admins.html">Admins</a></li>
           <li><a href="controlAdmins.html">Tabla Admins</a></li>
           <li><form action="" method="POST"><button type="submit" name="cerrarSesion">Cerrar Sesion</button></form></li>
           <li>
-                       </form>
-                    </li>
-                    <li>
                         <div class="buscar">
                             <input type="text" placeholder="Buscar" required />
 
@@ -68,22 +66,27 @@
     <main>
         <div id="contenedorParaFormulario">
             <div id="formularioCentrado">
-                <table class="content-table">
-                    <thead>
-                      <tr>
-                        <th>Usuario</th>
-                        <th>Correo</th>
-                        <th>Contraseña</th>
-                        <th>Rol</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      
-                      </tr>
-                    </tbody>
-                  </table>
+                <div id="login">
+                    <label for="usuario">Nombre del pedido:</label>
+                    <input id="usuario" type="text" name="usuario" placeholder="Pedido" required>
+                    <label for="usuario">Articulo:</label>
+                    <input id="articulo" type="articulo" name="articulo" placeholder="Articulo: Libreta, colores,etc" required>
+                    <label for="usuario">Tipo de Diseño:</label>
+                    <input id="usuario" type="text" name="usuario" placeholder="Caricatura,comic,etc" required>
+                    <label for="message">Descripción:</label>
+                    <textarea name="menssage" id="message" placeholder="Describe mas a detalle tus personalización"></textarea>
+                    
+
+                    <button type="submit" title="Ingresar" name="Ingresar">Realizar Pedido</button>
+
                 </div>
-                
+                <div id="derecho">
+                    <div class="titulo">
+                        Realiza tu Pedido 
+                        
+                    </div>
+                    <br>
+                    <hr>
                     <!-- <div class="pie-form">
                             <a href="#">¿Perdiste tu contraseña?</a>
                             <a href="#">¿No tienes Cuenta? Registrate</a>
@@ -94,20 +97,20 @@
             </div>
         </div>
         </div>
-    </main>
-    </div>
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="ejeZfooter">
-            <div class="footer-content">
-                <div class="footer-text">
-                    <p>&copy; Corazón de Papel - 2022 | Todos los derechos reservados.</p>
-                </div>
-
-            </div>
+        </>
         </div>
-    </footer>
-    </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="ejeZfooter">
+                <div class="footer-content">
+                    <div class="footer-text">
+                        <p>&copy; Corazón de Papel - 2022 | Todos los derechos reservados.</p>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+        </div>
     </main>
 
     <!-- Scripts -->

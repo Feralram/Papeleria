@@ -45,16 +45,16 @@ if(isset($_POST['cerrarSesion'])){
 
       <div class="list-container">
       <ul class="lists">
-          <li><a href="usuario.php" >Inicio</a></li>
+      <li><a href="usuario.php" class="active">Inicio</a></li>
           <!-- <li><a href="nosotros.php">Nosotros</a></li>
           <li><a href="servicio.php">Servicios</a></li>
           <li><a href="mision.php">Mision</a></li>
           <li><a href="vision.php">Vision</a></li> -->
-          <li><a href="pedido.php">Pedido</a></li>
-          <li><a href="admins.html">Admins</a></li>
-          <li><a href="fotos.php" class="active">Fotos</a></li>
+          <li><a href="pedido.html">Pedido</a></li>
+          <li><a href="fotos.php">Fotos</a></li>
           <li><a href="contacto.php">Contacto</a></li>
-          <li><a href="controlAdmins.html">TablaAdmins</a></li>
+          <li><a href="admins.html">Admins</a></li>
+          <li><a href="controlAdmins.html">Tabla Admins</a></li>
           <li><form action="" method="POST"><button type="submit" name="cerrarSesion">Cerrar Sesion</button></form></li>
           <li>
             <div class="buscar">
